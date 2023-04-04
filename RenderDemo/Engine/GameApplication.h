@@ -3,14 +3,21 @@
 
 NS_BEGIN
 
-    class GameWindow
+    class GameApplication
     {
     public:
-        bool Start();
-        void Destroy();
-        void Loop();
+        bool start();
+        void destroy();
+        void loop() const;
+private:
+    void pre_init();
+public:
+    static std::string RuntimePath;
+    
     private:
         class RenderWindow* render_window_ = nullptr;
         class LogicWindow* logic_window_ = nullptr;
+
+
     };
 NS_END

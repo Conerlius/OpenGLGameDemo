@@ -6,5 +6,6 @@ NS_BEGIN
     public:
         void Start();
         void Destroy();
+        void update(float detla);
     };
 NS_END

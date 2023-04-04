@@ -1,9 +1,15 @@
 ﻿#include "RenderWindow.h"
-#include "Log/EngineLog.h"
+#include "Common/Log/EngineLog.h"
+#include "Logic/Configure/GConfig.h"
 
 NS_BEGIN
-    bool RenderWindow::Start()
+    bool RenderWindow::start()
     {
+        auto conf = GConfig::get("GameConfig");
+    auto width = conf->get("Window.Width");
+    // std::string height = conf->get("Window.Height");
+    // std::string title = conf->get("Window.Title");
+    std::string title="aaaa";
         glfwInit();
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
@@ -11,7 +17,9 @@ NS_BEGIN
 #if ENGINE_MACOS
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 #endif
-        window_ = glfwCreateWindow(800, 600, "LearnOpenGL", NULL, NULL);
+    
+    
+        window_ = glfwCreateWindow(800, 600, title.c_str(), NULL, NULL);
         if (window_ == NULL)
         {
             LOG("RenderWindow", LogLevel::Info, "Failed to create GLFW window");
@@ -29,20 +37,20 @@ NS_BEGIN
         return true;
     }
 
-    void RenderWindow::Destroy()
+    void RenderWindow::destroy()
     {
         glfwTerminate();
         window_ = nullptr;
     }
 
-    bool RenderWindow::IsClose()
+    bool RenderWindow::is_close()
     {
         if (window_)
             return glfwWindowShouldClose(window_);
         return true;
     }
 
-    void RenderWindow::Draw()
+    void RenderWindow::draw()
     {
         glfwSwapBuffers(window_);
         glfwPollEvents();    

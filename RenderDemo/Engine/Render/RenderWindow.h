@@ -7,10 +7,10 @@ NS_BEGIN
     class RenderWindow
     {
     public:
-        bool Start();
-        void Destroy();
-        bool IsClose();
-        void Draw();
+        bool start();
+        void destroy();
+        bool is_close();
+        void draw();
     private:
         GLFWwindow* window_;
     };

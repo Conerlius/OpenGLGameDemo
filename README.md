@@ -1,2 +1,2 @@
-# OpenGLGameDemo
-opengl游戏
+# RenderDemo
+c++的渲染小游戏
