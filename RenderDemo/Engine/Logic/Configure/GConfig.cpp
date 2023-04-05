@@ -8,15 +8,16 @@ std::string Config::operator[](std::string key)
     return key_values[key];
 }
 
-std::string Config::get(const std::string key)
+void Config::set(const std::string key,const std::string value)
 {
-    return key_values[key];
+    LOG("Config", LogLevel::Info, value);
+    key_values.insert(std::make_pair(key, value));
 }
 
 
 std::map<std::string, std::shared_ptr<Config>> GConfig::all_configs;
 
-const Config* GConfig::get(const std::string config_name)
+Config* GConfig::get(const std::string config_name)
 {
     std::shared_ptr<Config> config = nullptr;
     auto result = all_configs.find(config_name);
@@ -31,7 +32,7 @@ const Config* GConfig::get(const std::string config_name)
         LOG("Config", LogLevel::Info, runtime_path);
         config = std::make_shared<Config>();
         all_configs.insert(make_pair(config_name, config));
-        ConfigReader::Parse(runtime_path+"/Engine/Configes/"+config_name+".ini", config);
+        ConfigReader::Parse(runtime_path+"/RenderDemo/Engine/Configes/"+config_name+".ini", config);
     }
     return config.get();
 }

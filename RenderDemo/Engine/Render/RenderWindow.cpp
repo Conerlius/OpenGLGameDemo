@@ -6,16 +6,15 @@ NS_BEGIN
     bool RenderWindow::start()
     {
         auto conf = GConfig::get("GameConfig");
-    auto width = conf->get("Window.Width");
-    // std::string height = conf->get("Window.Height");
-    // std::string title = conf->get("Window.Title");
-    std::string title="aaaa";
+    auto width = (*conf)["Window.Width"];
+    std::string height = (*conf)["Window.Height"];
+    std::string title = (*conf)["Window.Title"];
         glfwInit();
         glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
 #if ENGINE_MACOS
-        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+        glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);#prama 
 #endif
     
     

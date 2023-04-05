@@ -473,6 +473,7 @@
     <ClInclude Include="Engine\Render\RenderWindow.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Engine\Common\StringUtility.h" />
     <Content Include="Engine\Configes\GameConfig.ini" />
   </ItemGroup>
   <ItemGroup>
