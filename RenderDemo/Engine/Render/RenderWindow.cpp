@@ -6,7 +6,7 @@ NS_BEGIN
     bool RenderWindow::start()
     {
         auto conf = GConfig::get("GameConfig");
-    auto width = (*conf)["Window.Width"];
+    std::string width = (*conf)["Window.Width"];
     std::string height = (*conf)["Window.Height"];
     std::string title = (*conf)["Window.Title"];
         glfwInit();
@@ -18,7 +18,7 @@ NS_BEGIN
 #endif
     
     
-        window_ = glfwCreateWindow(800, 600, title.c_str(), NULL, NULL);
+        window_ = glfwCreateWindow(std::stoi(width), std::stoi(height), title.c_str(), NULL, NULL);
         if (window_ == NULL)
         {
             LOG("RenderWindow", LogLevel::Info, "Failed to create GLFW window");

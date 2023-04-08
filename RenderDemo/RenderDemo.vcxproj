@@ -240,6 +240,9 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Engine\Logic\core\GameObject.cpp" />
+    <ClCompile Include="Engine\Logic\core\Level.cpp" />
+    <ClCompile Include="Engine\Logic\core\Map.cpp" />
     <ClCompile Include="Engine\Logic\LogicWindow.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
@@ -313,6 +316,7 @@
       <SDLCheck>true</SDLCheck>
       <LinkCompiled>true</LinkCompiled>
     </ClCompile>
+    <ClCompile Include="Engine\Logic\Scene\Scene.cpp" />
     <ClCompile Include="Engine\Platform\Win\Platform.cpp" />
     <ClCompile Include="Engine\RenderDemo.cpp">
       <RuntimeLibrary>MultiThreadedDebugDll</RuntimeLibrary>
@@ -467,7 +471,11 @@
     <ClInclude Include="Engine\GameApplication.h" />
     <ClInclude Include="Engine\Logic\Configure\ConfigReader.h" />
     <ClInclude Include="Engine\Logic\Configure\GConfig.h" />
+    <ClInclude Include="Engine\Logic\core\GameObject.h" />
+    <ClInclude Include="Engine\Logic\core\Level.h" />
+    <ClInclude Include="Engine\Logic\core\Map.h" />
     <ClInclude Include="Engine\Logic\LogicWindow.h" />
+    <ClInclude Include="Engine\Logic\Scene\Scene.h" />
     <ClInclude Include="Engine\Platform\interfaces\IPlatform.h" />
     <ClInclude Include="Engine\Platform\Win\Platform.h" />
     <ClInclude Include="Engine\Render\RenderWindow.h" />

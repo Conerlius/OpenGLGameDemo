@@ -38,7 +38,7 @@ void ConfigReader::Parse(const std::string absolut_config_path, std::shared_ptr<
         if (std::regex_match(line, key_value_match, std::regex(R"(([^\=]+)\=(.*))"))) {
             std::string key = key_value_match.str(1);
             std::string value = key_value_match.str(2);
-            std::cout << value << std::endl;
+            // std::cout << value << std::endl;
             config->set(current_section +"." + key, value);
         }
     }

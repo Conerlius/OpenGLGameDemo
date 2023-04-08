@@ -10,7 +10,7 @@ std::string Config::operator[](std::string key)
 
 void Config::set(const std::string key,const std::string value)
 {
-    LOG("Config", LogLevel::Info, value);
+    // LOG("Config", LogLevel::Info, value);
     key_values.insert(std::make_pair(key, value));
 }
 
